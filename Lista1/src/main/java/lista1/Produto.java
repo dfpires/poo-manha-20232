@@ -1,7 +1,7 @@
-
 package lista1;
 
 public class Produto {
+
     // Java é tipado, variáveis possuem tipo de dados
     // tipos de dados primitivos (int, float, double, boolean)
     // tipos de dados de classe (String, Float, Integer, Double)
@@ -10,10 +10,10 @@ public class Produto {
     public String descricao;
     public int qtde;
     public float preco;
-    
+
     // método construtor, tem o mesmo nome da classe
-    public Produto(int codigo, String nome, String descricao, 
-            int qtde, float preco){
+    public Produto(int codigo, String nome, String descricao,
+            int qtde, float preco) {
         // this.codigo representa o código do obj que chama construtor
         // codigo representa o valor informado pelo usuário
         this.codigo = codigo;
@@ -22,24 +22,39 @@ public class Produto {
         this.qtde = qtde;
         this.preco = preco;
     }
+
     // comprar produtos
-    public void comprar(int x){
+    public void comprar(int x) {
         this.qtde = this.qtde + x;
     }
-    
+
     // vender produto
-    public void vender(int x){
-        if (x <= this.qtde){
+    public void vender(int x) {
+        if (x <= this.qtde) {
             this.qtde = this.qtde - x;
-        }
-        else {
+        } else {
             System.out.println("Estoque insuficiente");
         }
     }
-    public void exibeDados(){
-         // exibir os dados do objeto que chama o método
-       System.out.println("Código " + this.codigo + " Nome " + this.nome + 
-               " Descrição " + this.descricao + " Qtde " + this.qtde + " Preço " + 
-               this.preco);
+
+    // aumentar preço do produto
+    public void aumentarPreco(float x) {
+        this.preco = this.preco + x;
+    }
+
+    // diminuir preço do produto
+    public void diminuirPreco(float x) {
+        if (x <= this.preco) {
+            this.preco -= x; // this.preco = this.preco - x
+        } else {
+            System.out.println("Não é possível abaixar preço");
+        }
+    }
+
+    public void exibeDados() {
+        // exibir os dados do objeto que chama o método
+        System.out.println("Código " + this.codigo + " Nome " + this.nome
+                + " Descrição " + this.descricao + " Qtde " + this.qtde + " Preço "
+                + this.preco);
     }
 }

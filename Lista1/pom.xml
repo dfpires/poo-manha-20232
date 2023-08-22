@@ -11,4 +11,5 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>lista1.Lista1</exec.mainClass>
     </properties>
+    <name>Listas</name>
 </project>

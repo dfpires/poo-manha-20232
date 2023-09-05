@@ -14,8 +14,18 @@ public class Aluno {
     private float p1;
     private float p2;
     
+    public Aluno(){
+        
+    }
+    public Aluno(int idade, long ra, float p1, float p2){
+        this.setIdade(idade);
+        this.setRa(ra);
+        this.setP1(p1);
+        this.setP2(p2);
+    }
     // definição dos métodos setters
-    public void setIdade(int idade){
+    // final => método não pode ser alterado pelas classes filhas
+    public final void setIdade(int idade){
         if (idade >= 0){
             this.idade = idade;
         }
@@ -24,7 +34,7 @@ public class Aluno {
             System.out.println("Idade inválida, foi atribuido 0");
         }
     }
-    public void setRa(long ra){
+    public final void setRa(long ra){
         // vamos criar um string de ra convertendo long em String
         String raString = String.valueOf(ra);
         
@@ -36,7 +46,7 @@ public class Aluno {
             System.out.println("Ra inválido, foi atribuído 0");
         }
     }
-    public void setP1(float p1){
+    public final void setP1(float p1){
         if (p1 >=0 && p1 <= 10){
             this.p1 = p1;
         }
@@ -45,7 +55,7 @@ public class Aluno {
             System.out.println("P1 inválida, foi atribuida 0");
         }
     }
-    public void setP2(float p2){
+    public final void setP2(float p2){
         if (p2 >=0 && p2 <= 10){
             this.p2 = p2;
         }

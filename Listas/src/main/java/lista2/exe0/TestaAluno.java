@@ -32,6 +32,9 @@ public class TestaAluno {
         System.out.println(obj1.getRa());
         System.out.println(obj2.mostra());
         System.out.println(obj2.getIdade());
+        
+        Aluno obj3 = new Aluno(-5, 2321, 4, 12);
+        System.out.println(obj3.mostra());
     }
     
 }

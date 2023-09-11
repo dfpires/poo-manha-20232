@@ -66,7 +66,9 @@ public class Fornecedor {
 
     @Override
     public String toString() {
-        return "Fornecedor{" + "id=" + id + ", nome=" + nome + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + ", endereco=" + endereco + '}';
+        return "Fornecedor{" + "id=" + id + ", nome=" + nome + 
+                ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + 
+                ", endereco=" + endereco.toString() + '}';
     }
     
     

@@ -66,7 +66,10 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "id=" + id + ", nome=" + nome + ", rg=" + rg + ", cpf=" + cpf + ", endereco=" + endereco + '}';
+        return "Cliente{id=" + id + 
+                ", nome=" + nome + ", rg=" + rg + 
+                ", cpf=" + cpf + ", endereco=" + 
+                endereco.toString() + '}';
     }
     
     

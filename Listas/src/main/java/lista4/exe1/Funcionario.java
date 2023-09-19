@@ -1,5 +1,9 @@
 package lista4.exe1;
-public class Funcionario {
+// classe abstrata não pode ser instanciada
+// classe abstrata pode ter métodos abstratos, que não são implementados na classe
+// mas devem ser implementados nas classes filhas
+// classe abstrata é sempre uma classe pai ou superclasse
+public abstract class Funcionario {
     protected String nome, endereco, cpf;
     protected float salario;
 
@@ -16,7 +20,7 @@ public class Funcionario {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public final void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -24,7 +28,7 @@ public class Funcionario {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
+    public final void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
@@ -32,7 +36,7 @@ public class Funcionario {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public final void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -40,7 +44,7 @@ public class Funcionario {
         return salario;
     }
 
-    public void setSalario(float salario) {
+    public final void setSalario(float salario) {
         this.salario = salario;
     }
 
@@ -49,7 +53,6 @@ public class Funcionario {
         return "Funcionario{" + "nome=" + nome + ", endereco=" + endereco + ", cpf=" + cpf + ", salario=" + salario + '}';
     }
     
-    public float calculaSalario(){
-        return this.salario;
-    }
+    public abstract float calculaSalario();
+    
 }

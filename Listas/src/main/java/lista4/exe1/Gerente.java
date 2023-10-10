@@ -17,11 +17,9 @@ public class Gerente extends Funcionario{
         super(nome, endereco, cpf, salario);
         this.setBonus(bonus);
     }
-
     public float getBonus() {
         return bonus;
     }
-
     public final void setBonus(float bonus) {
         this.bonus = bonus;
     }
@@ -30,7 +28,6 @@ public class Gerente extends Funcionario{
     public String toString() {
         return "Gerente{" + "bonus=" + bonus + super.toString() + '}';
     }
-    
     @Override
     public float calculaSalario(){
         return this.salario + this.bonus;

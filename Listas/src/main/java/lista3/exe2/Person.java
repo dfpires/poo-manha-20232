@@ -10,24 +10,31 @@ package lista3.exe2;
  */
 public class Person {
     private String name, user;
-    public Person() {
+    public Person(){
+        
     }
+
     public Person(String name, String user) {
-        this.name = name;
-        this.user = user;
+        this.setName(name);
+        this.setUser(user);
     }
+
     public String getName() {
         return name;
     }
-    public void setName(String name) {
+
+    public final void setName(String name) {
         this.name = name;
     }
+
     public String getUser() {
         return user;
     }
-    public void setUser(String user) {
+
+    public final void setUser(String user) {
         this.user = user;
     }
+
     @Override
     public String toString() {
         return "Person{" + "name=" + name + ", user=" + user + '}';

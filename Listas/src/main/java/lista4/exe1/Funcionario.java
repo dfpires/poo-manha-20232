@@ -1,8 +1,5 @@
 package lista4.exe1;
-// classe abstrata não pode ser instanciada
-// classe abstrata pode ter métodos abstratos, que não são implementados na classe
-// mas devem ser implementados nas classes filhas
-// classe abstrata é sempre uma classe pai ou superclasse
+// classe não pode ser instanciada
 public abstract class Funcionario {
     protected String nome, endereco, cpf;
     protected float salario;
@@ -48,9 +45,11 @@ public abstract class Funcionario {
         this.salario = salario;
     }
 
-    @Override
+    @Override // anulação de método
     public String toString() {
-        return "Funcionario{" + "nome=" + nome + ", endereco=" + endereco + ", cpf=" + cpf + ", salario=" + salario + '}';
+        return "Funcionario{" + "nome=" + nome + ", endereco=" + 
+                endereco + ", cpf=" + cpf + ", salario=" + 
+                salario + '}';
     }
     
     public abstract float calculaSalario();

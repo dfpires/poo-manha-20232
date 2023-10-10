@@ -1,6 +1,6 @@
 package lista4.exe1;
 public class Diretor extends Funcionario{
-    private float acoesEmpresa;
+    private float acoesEmpresa; // qtde de ações
     public Diretor(){
         super();
     }
@@ -20,11 +20,11 @@ public class Diretor extends Funcionario{
 
     @Override
     public String toString() {
-        return "Diretor{" + "acoesEmpresa=" + acoesEmpresa + 
-                super.toString() + '}';
+        return "Diretor{" + "acoesEmpresa=" + acoesEmpresa + super.toString() + '}';
     }
+    
     @Override
     public float calculaSalario(){
-        return this.salario + (this.acoesEmpresa * 5) / 12;
+        return this.salario + (8 * this.acoesEmpresa) / 12;
     }
 }

@@ -1,36 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package lista3.exe1;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author danie
- */
 public class ShoppingCart {
-    private int id;
-    private ArrayList<CarItem> carItens; // vetor
+  private int id;
+  private ArrayList<CarItem> carItens;
 
-    public ShoppingCart() {
-        // alocar espaço na memória para o vetor
-        carItens = new ArrayList();
-    }
+  public ShoppingCart() {
+      this.carItens = new ArrayList(); // aloca espaço na memória
+  }
 
-    public ShoppingCart(int id, ArrayList<CarItem> carItens) {
+  public ShoppingCart(int id, ArrayList<CarItem> carItens) {
         this.id = id;
         this.carItens = carItens;
-    }
-    // adiciona um CarItem no vetor
-    public void addCarItem(CarItem carItem){
-        this.carItens.add(carItem);
-    }
-    // remove um item do carrinho 
-    public boolean removeCarItem(CarItem carItem){
-        return this.carItens.remove(carItem);
-    }
+  }
+  public void addCarItem(CarItem carItem){
+      this.carItens.add(carItem);
+  }
+  public boolean removeCarItem(CarItem carItem){
+      return this.carItens.remove(carItem);
+  }
 
     public int getId() {
         return id;
@@ -48,10 +37,21 @@ public class ShoppingCart {
         this.carItens = carItens;
     }
 
-    @Override
-    public String toString() {
-        return "ShoppingCart{" + "id=" + id + ", carItens=" + carItens + '}';
+    public float caculateTotal(){
+        float total = 0;
+        for(int i=0;i<carItens.size();i++){
+            total += (carItens.get(i).getQuantity() * 
+                    carItens.get(i).getProduct().getPrice());
+        }
+        return total;
     }
-    
-    
+  @Override
+  public String toString() {
+      // carItens irá percorrer o vetor e chamar toString() de cada CarItem
+      return "ShoppingCart{" + "id=" + id + 
+              ", carItens=" + carItens + " \n Total: " + 
+              this.caculateTotal() + '}';
+  }
+  
+  
 }

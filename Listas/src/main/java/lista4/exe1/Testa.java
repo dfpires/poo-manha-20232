@@ -10,29 +10,25 @@ package lista4.exe1;
  */
 public class Testa {
 
-    public static void exibeResultado(Funcionario func){
-        /* func é um objeto da superclasse que tem comportamento polimórfico
-         func pode executar os métodos toString() e calculaSalario() das classes
-         Assistente, Gerente ou Diretor 
-         Sendo assim, func vai executar os métodos de qual classe? 
-         depende de qual objeto está sendo passado na chamada do método
-        */
-        System.out.println(func.toString());
-        System.out.println(func.calculaSalario());
+    public static void mostra(Funcionario objeto){
+        System.out.println(objeto.toString());
+        System.out.println(objeto.calculaSalario());
     }
+    
     public static void main(String[] args) {
         // TODO code application logic here
-        Assistente objAssistente = new Assistente(2, "Fulano", 
+        
+        Assistente objAss = new Assistente(3, "Fulano", 
                 "Franca", "123", 3000);
-        exibeResultado(objAssistente);
+      mostra(objAss);
         
-        Gerente objGerente = new Gerente(1000, "Beltrano", "Franca", 
-                "456", 4000);
-        exibeResultado(objGerente);
-        
-        Diretor objDiretor = new Diretor(20000, "Ciclano",
-                "Franca", "789", 5000);
-        exibeResultado(objDiretor);
+        Gerente objGer = new Gerente(1000, "Beltrano", 
+                "Franca", "456", 4000);
+        mostra(objGer);
+        Diretor objDir = new Diretor(1000, "Ciclano",
+                "Franca", "789", 6000);
+       mostra(objDir);
+       
     }
     
 }

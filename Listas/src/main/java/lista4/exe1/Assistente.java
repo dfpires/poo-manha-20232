@@ -10,14 +10,15 @@ package lista4.exe1;
  */
 public class Assistente extends Funcionario{
     private float horaExtra;
-
-    public Assistente() {
-        super(); // chama construtor da superclasse sem parâmetros
+    public Assistente(){
+        super(); // chama construtor sem parâmetro do pai
     }
 
-    public Assistente(float horaExtra, String nome, String endereco, String cpf, float salario) {
-        super(nome, endereco, cpf, salario); // chama construtor da superclasse com 4 parâmetros
-        this.setHoraExtra(horaExtra);
+    public Assistente(float horaExtra, String nome, String endereco, 
+            String cpf, float salario) {
+        // chama construtor com parâmetro do pai
+       super(nome, endereco, cpf, salario);
+       this.setHoraExtra(horaExtra); 
     }
 
     public float getHoraExtra() {
@@ -28,16 +29,14 @@ public class Assistente extends Funcionario{
         this.horaExtra = horaExtra;
     }
 
-    @Override // indica a anulação
+    @Override // anula toString() da classe Funcionário
     public String toString() {
         return "Assistente{" + "horaExtra=" + horaExtra + 
                 super.toString() + '}';
     }
-    // precisamos anular o método herdado calculaSalario()
-    @Override // indica a anulação
+    @Override
     public float calculaSalario(){
-       return this.salario + (this.horaExtra * 30);
+        return this.salario + (this.horaExtra * 30);
     }
-    
     
 }

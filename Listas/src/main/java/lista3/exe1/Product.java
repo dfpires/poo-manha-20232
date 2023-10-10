@@ -2,6 +2,7 @@ package lista3.exe1;
 public class Product {
     private String name;
     private float price;
+
     public Product() {
     }
     public Product(String name, float price) {
@@ -20,9 +21,10 @@ public class Product {
     public final void setPrice(float price) {
         this.price = price;
     }
+
     @Override
     public String toString() {
         return "Product{" + "name=" + name + ", price=" + price + '}';
     }
-    
+   
 }

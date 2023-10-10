@@ -1,17 +1,29 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package lista4.exe2;
+
+/**
+ *
+ * @author danie
+ */
 public class Horse extends Animal{
     private boolean competitor;
     public Horse(){
         super();
     }
+
     public Horse(boolean competitor, String name, int age) {
         super(name, age);
-        this.setCompetitor(competitor);
+        this.competitor = competitor;
     }
+
     public boolean isCompetitor() {
         return competitor;
     }
-    public final void setCompetitor(boolean competitor) {
+
+    public void setCompetitor(boolean competitor) {
         this.competitor = competitor;
     }
 
@@ -21,9 +33,10 @@ public class Horse extends Animal{
                 super.toString() + '}';
     }
     
+    
     @Override
     public String move(){
-        return "Troting";
+        return "Trots";
     }
     
 }

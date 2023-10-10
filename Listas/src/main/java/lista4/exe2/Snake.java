@@ -1,12 +1,23 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package lista4.exe2;
+
+/**
+ *
+ * @author danie
+ */
 public class Snake extends Animal{
     private boolean poisonous, smoke;
+
     public Snake() {
-        super(); // chama o construtor da superclasse
+        super();
     }
+
     public Snake(boolean poisonous, boolean smoke, 
             String name, int age) {
-        super(name, age); // chama o construtor da superclasse
+        super(name, age);
         this.setPoisonous(poisonous);
         this.setSmoke(smoke);
     }
@@ -14,7 +25,7 @@ public class Snake extends Animal{
     public boolean isPoisonous() {
         return poisonous;
     }
-
+    
     public final void setPoisonous(boolean poisonous) {
         this.poisonous = poisonous;
     }
@@ -30,11 +41,13 @@ public class Snake extends Animal{
     @Override
     public String toString() {
         return "Snake{" + "poisonous=" + poisonous + 
-                ", smoke=" + smoke + super.toString() + '}';
+          ", smoke=" + smoke + super.toString() +
+          '}';
     }
+    
     
     @Override
     public String move(){
-        return "slithering";
+        return "Slithering";
     }
 }

@@ -9,18 +9,21 @@ package lista4.exe2;
  * @author danie
  */
 public class Testa {
-    public static void show(Animal camaleao){
-        System.out.println(camaleao.toString());
-        System.out.println(camaleao.move());
+
+    
+    public static void show(Animal animal){
+        System.out.println(animal.move());
+        System.out.println(animal.toString());
     }
-        
     public static void main(String[] args) {
-        Snake objSnake = new Snake(true,
-                false, "víbora", 3);
-        show(objSnake); // Animal camaleao = objSnake
-        Horse objHorse = new Horse(true, 
-                "Pé de pano", 5);
+        // TODO code application logic here
+        Horse objHorse = new Horse(true, "Pé de pano",
+                6);
         show(objHorse);
+        Snake objSnake = new Snake(true, false, 
+            "Naja", 3);
+        show(objSnake);
+        
     }
     
 }

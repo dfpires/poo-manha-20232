@@ -11,27 +11,35 @@ package lista3.exe2;
 public class Message {
     private String text;
     private Person person;
+
     public Message() {
     }
+
     public Message(String text, Person person) {
-        this.text = text;
-        this.person = person;
+        this.setText(text);
+        this.setPerson(person);
     }
+
     public String getText() {
         return text;
     }
-    public void setText(String text) {
+
+    public final void setText(String text) {
         this.text = text;
     }
+
     public Person getPerson() {
         return person;
     }
-    public void setPerson(Person person) {
+
+    public final void setPerson(Person person) {
         this.person = person;
     }
+
     @Override
     public String toString() {
-        return "\n Message{" + "text=" + text + 
-                ", person=" + person.toString() + '}';
+        return " \nMessage={text=" + text + 
+                ", person=" + person + '}';
     }
+    
 }

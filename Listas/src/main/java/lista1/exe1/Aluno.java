@@ -9,39 +9,34 @@ package lista1.exe1;
  * @author danie
  */
 public class Aluno {
-    public int nroAluno, idade;
+    public int numero, idade;
     public String nome;
     public float p1, p2;
-    
+    // construtores
     public Aluno(){
         
     }
-    public Aluno(int nroAluno, String nome, int idade, float p1, float p2){
-        this.nroAluno = nroAluno;
-        this.nome = nome;
+    public Aluno(int numero, int idade, 
+      String nome, float p1, float p2){
+        this.numero = numero;
         this.idade = idade;
+        this.nome = nome;
         this.p1 = p1;
         this.p2 = p2;
     }
-    // calcula e retorna a média final
-    public float notaFinal(){
-        float media = (this.p1 + this.p2) / 2;
-        return media;
-    }   
-    // verificar se o aluno passou
-    public void passou(){
-        if (this.notaFinal() >= 6){
-            System.out.println("Estudante foi aprovado");
-        }
-        else {
-            System.out.println("Estudante foi reprovado");
-        }
-    }
-    // retorna os dados do aluno
+    
     public String dadosAluno(){
-        return "Número do aluno: " + this.nroAluno + 
-                " Nome: " + this.nome +
-                " Idade: " + this.idade + 
-                " Média: " + this.notaFinal();
+        return "Número: " + this.numero +
+                "\n Nome: " + this.nome +
+                "\n Idade: " + this.idade +
+                "\n Média: " + this.notaFinal()+ 
+                "\n foi " + this.passou();
+    }
+    public float notaFinal(){
+        return (this.p1 + this.p2) / 2;
+    }
+    public String passou(){
+        return (this.notaFinal() >= 6) ? 
+                "Aprovado" : "Reprovado";
     }
 }

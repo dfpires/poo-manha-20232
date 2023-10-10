@@ -17,7 +17,7 @@ public class Testa {
     public static void main(String[] args) {
         Snake objSnake = new Snake(true,
                 false, "víbora", 3);
-        show(objSnake);
+        show(objSnake); // Animal camaleao = objSnake
         Horse objHorse = new Horse(true, 
                 "Pé de pano", 5);
         show(objHorse);

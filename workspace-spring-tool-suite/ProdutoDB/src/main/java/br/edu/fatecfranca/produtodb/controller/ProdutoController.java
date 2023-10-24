@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,4 +29,10 @@ public class ProdutoController {
 		return injecao.findAll();
 	}
 	
+	// insere no banco de dados é sempre o verbo POST
+	// recupera o corpo da requisição e insere no banco
+	@PostMapping
+	public Produto addProduto(@RequestBody Produto produto) {
+		return injecao.save(produto);
+	}
 }

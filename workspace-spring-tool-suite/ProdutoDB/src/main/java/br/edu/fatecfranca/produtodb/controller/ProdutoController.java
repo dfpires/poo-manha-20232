@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.edu.fatecfranca.produtodb.model.dto.ProdutoDto;
 import br.edu.fatecfranca.produtodb.model.entity.Produto;
 import br.edu.fatecfranca.produtodb.service.ProdutoService;
 
@@ -29,14 +30,14 @@ public class ProdutoController {
 	
 	// consulta no banco de dados é sempre o verbo GET
 	@GetMapping 
-	public List<Produto> getProdutos(){
+	public List<ProdutoDto> getProdutos(){
 		return servico.getProdutos();
 	}
 	
 	// consulta no banco de dados por um produto em específico
 	@GetMapping("/{id}")
-	public Optional<Produto> getProduto(@PathVariable Long id) {
-		Optional<Produto> prod =  servico.getProduto(id);
+	public ProdutoDto getProduto(@PathVariable Long id) {
+		ProdutoDto prod = servico.getProduto(id);
 		return prod;
 	}
 	
@@ -44,24 +45,23 @@ public class ProdutoController {
 	// insere no banco de dados é sempre o verbo POST
 	// recupera o corpo da requisição e insere no banco
 	@PostMapping
-	public Produto addProduto(@RequestBody Produto produto) {
-		return servico.addProduto(produto);
+	public ProdutoDto addProduto(@RequestBody ProdutoDto produtoDto) {
+		return servico.addProduto(produtoDto);
 	}
 	
 	// remove do banco de dados é sempre o verbo DELETE
 	@DeleteMapping("/{id}")
 	public String removeProduto(@PathVariable Long id) {
-		servico.removeProduto(id);
-		return "Remoção com sucesso";
+		return servico.removeProduto(id);
 	}
 	
 	// atualiza no banco de dados é sempre com PUT
 	@PutMapping()
-	public Produto updateProduto(@RequestBody Produto produto) {
+	public ProdutoDto updateProduto(@RequestBody ProdutoDto produtoDto) {
 		// perceba que o save está sendo utilizado na inserção
 		// e atualização. Isso porque, caso o produto não
 		// tenha id, é pra salvar, caso o produto tenha id,
 		// vai atualizar
-		return servico.updateProduto(produto);
+		return servico.updateProduto(produtoDto);
 	}
 }
